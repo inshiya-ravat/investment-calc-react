@@ -3,29 +3,36 @@ import UserInput from "./components/UserInput/UserInput";
 import ResultTable from "./components/ResultTable/ResultTable";
 import { ChangeEvent, useState } from "react";
 import Header from './components/Header/Header';
+import { Input } from "./components/UserInput/UserInput";
 
-type Input = number | undefined;
+export const InputEnums = {
+  InitialInvestment: "initialInvestment",
+  AnnualInvestement: "annualInvestment" ,
+  ExpectedReturn: "expectedReturn",
+  Duration: "duration"
+} as const
+export type InputEnumType = typeof InputEnums[keyof typeof InputEnums]
 
 function App() {
   const [initialInvestment, setInitialInvestment] = useState<Input>(undefined);
   const [annualInvestment, setAnnualInvestment] = useState<Input>(undefined);
   const [expectedReturn, setExpectedReturn] = useState<Input>(undefined);
   const [duration, setDuration] = useState<Input>(undefined);
-  function handleUserInputchange(e: ChangeEvent<HTMLInputElement>) {
-    switch (e.target.name) {
-      case "inital-investment": {
+  function handleUserInputchange(e: ChangeEvent<HTMLInputElement>,name:InputEnumType) {
+    switch (name.toString()) {
+      case InputEnums.InitialInvestment: {
         setInitialInvestment(() => +e.target.value);
         break;
       }
-      case "annual-investment": {
+      case InputEnums.AnnualInvestement: {
         setAnnualInvestment(() => +e.target.value);
         break;
       }
-      case "expected-return": {
+      case InputEnums.ExpectedReturn: {
         setExpectedReturn(() => +e.target.value);
         break;
       }
-      case "duration": {
+      case InputEnums.Duration: {
         setDuration(() => +e.target.value);
         break;
       }
