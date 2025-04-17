@@ -18,11 +18,13 @@ const ResultTable = ({resultData}:ResultTableProp) => {
   return (
     <table id="result">
       <thead>
-        <td>year</td>
-        <td>Investment Value</td>
-        <td>Interest(year)</td>
-        <td>Total Interest</td>
-        <td>Invested Capital</td>
+        <tr>
+            <th>year</th>
+            <th>Investment Value</th>
+            <th>Interest(year)</th>
+            <th>Total Interest</th>
+            <th>Invested Capital</th>
+        </tr>
       </thead>
       <tbody>
         {
