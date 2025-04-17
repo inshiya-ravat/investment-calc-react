@@ -4,6 +4,7 @@ import ResultTable from "./components/ResultTable/ResultTable";
 import { ChangeEvent, useState } from "react";
 import Header from './components/Header/Header';
 import { Input } from "./components/UserInput/UserInput";
+import { AnnualData } from "./components/ResultTable/ResultTable";
 
 export const InputEnums = {
   InitialInvestment: "initialInvestment",
@@ -12,13 +13,7 @@ export const InputEnums = {
   Duration: "duration"
 } as const
 export type InputEnumType = typeof InputEnums[keyof typeof InputEnums]
-type AnnualData= {
-  year : number,
-  investmentValue: number,
-  interest :number,
-  totalInterest :number,
-  investedCapital :number,
-}[]
+
 function getResult(initialInvestment:number,annualInvestment:number,expectedReturn:number,duration:number){
   const annualData:AnnualData = [];
   let investmentValue = initialInvestment;

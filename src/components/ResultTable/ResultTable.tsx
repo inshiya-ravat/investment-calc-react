@@ -1,4 +1,4 @@
-type AnnualData= {
+export type AnnualData= {
     year : number,
     investmentValue: number,
     interest :number,
@@ -18,11 +18,11 @@ const ResultTable = ({resultData}:ResultTableProp) => {
   return (
     <table id="result">
       <thead>
-        <th>year</th>
-        <th>Investment Value</th>
-        <th>Interest(year)</th>
-        <th>Total Interest</th>
-        <th>Invested Capital</th>
+        <td>year</td>
+        <td>Investment Value</td>
+        <td>Interest(year)</td>
+        <td>Total Interest</td>
+        <td>Invested Capital</td>
       </thead>
       <tbody>
         {
