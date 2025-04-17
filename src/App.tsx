@@ -2,6 +2,7 @@ import "./App.css";
 import UserInput from "./components/UserInput/UserInput";
 import ResultTable from "./components/ResultTable/ResultTable";
 import { ChangeEvent, useState } from "react";
+import Header from './components/Header/Header';
 
 type Input = number | undefined;
 
@@ -32,6 +33,7 @@ function App() {
   }
   return (
     <>
+      <Header/>
       <UserInput initialInvestment={initialInvestment} annualInvestment={annualInvestment} expectedReturn={expectedReturn} duration={duration} inputChange={handleUserInputchange}/>
       <ResultTable />
     </>
